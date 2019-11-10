@@ -1,0 +1,31 @@
+<form [formGroup]="userForm">
+    <mat-card>
+        <mat-card-title>
+            Log in an user
+        </mat-card-title>
+        <mat-card-content>
+            <div>
+                <mat-form-field>
+                    <input placeholder="Email" formControlName="email" matInput>
+                    <mat-error *ngIf="userForm.controls.email.hasError('required')">
+                        Please enter your email.
+                    </mat-error>
+                    <mat-error *ngIf="userForm.controls.email.hasError('email')">
+                        Please enter a correct email.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input type="password" placeholder="Password" formControlName="password" matInput>
+                    <mat-error *ngIf="userForm.controls.password.hasError('required')">
+                        Please enter your password
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button type="submit" (click)="onSubmit()" color="primary">Sign In</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

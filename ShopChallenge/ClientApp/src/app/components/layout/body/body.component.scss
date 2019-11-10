@@ -1,0 +1,17 @@
+.signin,
+.signup,
+.waiting {
+  display: flex;
+  align-self: center;
+  flex-wrap: wrap;
+}
+
+.shopList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+.waiting {
+  margin-bottom: 50px;
+}

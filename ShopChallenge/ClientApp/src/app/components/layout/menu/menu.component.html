@@ -1,0 +1,12 @@
+<div [ngSwitch]="menuState | async" class="menu">
+    <span class="user menu" *ngSwitchCase="menus.User">
+        <button mat-button (click)="allShops()">All shops</button>
+        <button mat-button (click)="preferredShops()">Preferred shops</button>
+        <button mat-button (click)="nearbyShops()">Nearby shops</button>
+        <button mat-button (click)="logOut()">Log out</button>
+    </span>
+    <span class="shop menu" *ngSwitchCase="menus.Visitor">
+        <button mat-button (click)="signIn()">Log in</button>
+        <button mat-button (click)="signUp()">Sign Up</button>
+    </span>
+</div>

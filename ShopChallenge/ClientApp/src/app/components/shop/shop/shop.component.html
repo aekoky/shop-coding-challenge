@@ -1,0 +1,16 @@
+<mat-card class="shop">
+    <mat-card-title>
+        {{shop.name}}
+    </mat-card-title>
+    <mat-card-content class="shopImage">
+        <img [src]="shop.picture">
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-icon-button (click)="likeShop()">
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button (click)="dislikeShop()">
+            <mat-icon>favorite_border</mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>

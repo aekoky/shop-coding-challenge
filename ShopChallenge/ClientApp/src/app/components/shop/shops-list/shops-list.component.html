@@ -1,0 +1,14 @@
+<mat-grid-list class="shops" cols="3" [rowHeight]="298" [infiniteScrollDistance]="1" [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()" infiniteScroll>
+    <mat-grid-tile *ngFor="let shop of shops | async; trackBy:trackById">
+        <app-shop class="shop" [shop]="shop" (disliked)="removeShopFromList($event)"
+            (liked)="removeShopFromList($event)">
+        </app-shop>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <ngx-skeleton-loader count="2" [theme]="{ 
+            height: '149px'
+          }">
+        </ngx-skeleton-loader>
+    </mat-grid-tile>
+</mat-grid-list>

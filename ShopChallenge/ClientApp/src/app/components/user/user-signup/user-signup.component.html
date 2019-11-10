@@ -1,0 +1,53 @@
+<form *ngIf="userForm | async as form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-card>
+        <mat-card-title>
+            Sign Up a new user
+        </mat-card-title>
+        <mat-card-content class="form">
+            <div>
+                <mat-form-field>
+                    <input placeholder="Email" formControlName="email" matInput>
+                    <mat-error *ngIf="form.controls.email.hasError('email')">
+                        Please enter a correct email.
+                    </mat-error>
+                    <mat-error *ngIf="form.controls.email.hasError('required')">
+                        Please enter your email.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input placeholder="New password" formControlName="password" matInput>
+                    <mat-error *ngIf="form.controls.password.hasError('required')">
+                        Please enter your new password
+                    </mat-error>
+                    <mat-error *ngIf="form.controls.password.hasError('pattern')">
+                        Please enter a strong password.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input placeholder="Confirm password" formControlName="confirmPassword" matInput>
+                    <mat-error *ngIf="form.controls.confirmPassword.hasError('notSame')">
+                        Passwords do not match
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div formGroupName="coordinates">
+                <mat-form-field>
+                    <input placeholder="Longitude" formControlName="longitude" matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <input placeholder="Latitude" formControlName="latitude" matInput>
+                </mat-form-field>
+                <mat-error *ngIf="form.controls.coordinates.hasError('required')">
+                    Please entre your Location
+                </mat-error>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button type="submit" color="primary" mat-raised-button>Sign Up</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

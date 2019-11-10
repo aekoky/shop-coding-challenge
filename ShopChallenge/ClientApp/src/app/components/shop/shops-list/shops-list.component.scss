@@ -1,0 +1,16 @@
+.shops {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-basis: auto;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  > .shop {
+    height: 298px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+  }
+}

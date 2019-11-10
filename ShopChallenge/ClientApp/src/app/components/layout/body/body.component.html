@@ -1,0 +1,8 @@
+<ng-container [ngSwitch]="viewState | async">
+    <app-shops-list class="shopList" *ngSwitchCase="views.Shops"></app-shops-list>
+    <app-user-signin class="signin" *ngSwitchCase="views.SingingIn"></app-user-signin>
+    <app-user-signup class="signup" *ngSwitchCase="views.SingingUp"></app-user-signup>
+    <ng-container *ngSwitchDefault>
+        <mat-spinner class="waiting"></mat-spinner>
+    </ng-container>
+</ng-container>
